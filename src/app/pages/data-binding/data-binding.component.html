@@ -1,0 +1,14 @@
+<h1 [class.textRed]="textRed">O nome é {{retornaNome()}}</h1>
+<img [src]="imageUrl" [alt]="imageDesc" [style.width.px]="widthImg">
+<button [attr.aria-label]="buttonText" [style.background-color]="bgColor">{{buttonText}}</button>
+<input type="text" #input (keyup)="clicou(input.value)">
+<input type="text" class="form-control" [(ngModel)]="textInput">
+<p class="text-default">{{textInput}}</p>
+
+<app-button [btnText]="'Enviar'"></app-button>
+<app-button [btnText]="'Deletar'" [btnType]="'btn-danger'"></app-button>
+<app-button [btnText]="'Incrementa'" [btnType]="'btn-danger'" (click)="incrementa()"></app-button>
+<app-button [btnText]="'Cancelar'" [btnType]="'btn-danger'" (click)="destroiComponente()"></app-button>
+<app-button [btnText]="'Salvar'" [btnType]="'btn-success'" (clickChildren)="clicouNoFilho($event)"></app-button>
+
+<app-life-cycle [number]="number" *ngIf="!destroi"></app-life-cycle>
