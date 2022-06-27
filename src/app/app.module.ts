@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { TodoItemComponent } from './pages/todo/todo-item/todo-item.component';
 import{ MatListModule} from '@angular/material/list'
 import {MatButtonModule} from '@angular/material/button'
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { PipesExampleComponent } from './pages/pipes-example/pipes-example.component';
+import { UpperCasePipe } from '@angular/common';
+import { PrintListPipe } from './pipes/print-list.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,8 @@ import {MatIconModule} from '@angular/material/icon'
     LifeCycleComponent,
     TodoListComponent,
     TodoItemComponent,
-    
+    PipesExampleComponent,
+    PrintListPipe,
   ],
   imports: [
     BrowserModule,
@@ -45,9 +50,10 @@ import {MatIconModule} from '@angular/material/icon'
     MatGridListModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+   
   ],
-  providers: [],
+  providers: [UpperCasePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
